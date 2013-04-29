@@ -102,7 +102,7 @@ let s:delimiterMap = {
     \ 'caos': { 'left': '*' },
     \ 'calibre': { 'left': '//' },
     \ 'catalog': { 'left': '--', 'right': '--' },
-    \ 'c': { 'left': '/*','right': '*/', 'leftAlt': '//' },
+    \ 'c': { 'left': '//', 'leftAlt': '/*','rightAlt': '*/' },
     \ 'cf': { 'left': '<!---', 'right': '--->' },
     \ 'cfg': { 'left': '#' },
     \ 'cg': { 'left': '//', 'leftAlt': '/*', 'rightAlt': '*/' },
@@ -2377,7 +2377,7 @@ endfunction
 function s:Left(...)
     let params = a:0 ? a:1 : {}
 
-    let delim = has_key(params, 'alt') ? b:NERDCommenterDelims['leftAlt'] : b:NERDCommenterDelims['left'] 
+    let delim = has_key(params, 'alt') ? b:NERDCommenterDelims['leftAlt'] : b:NERDCommenterDelims['left']
 
     if delim == ''
         return ''
@@ -2556,7 +2556,7 @@ endfunction
 function s:Right(...)
     let params = a:0 ? a:1 : {}
 
-    let delim = has_key(params, 'alt') ? b:NERDCommenterDelims['rightAlt'] : b:NERDCommenterDelims['right'] 
+    let delim = has_key(params, 'alt') ? b:NERDCommenterDelims['rightAlt'] : b:NERDCommenterDelims['right']
 
     if delim == ''
         return ''
